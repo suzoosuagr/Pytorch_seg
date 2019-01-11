@@ -1,0 +1,116 @@
+2019-01-03 03:09:59,644:INFO: initialize network with normal
+2019-01-03 03:10:00,137:INFO: initialize network with normal
+2019-01-03 03:11:10,615:INFO: initialize network with normal
+2019-01-03 03:11:10,981:INFO: initialize network with normal
+2019-01-03 19:33:00,224:INFO: initialize network with normal
+2019-01-03 19:33:00,584:INFO: initialize network with normal
+2019-01-03 19:48:37,133:INFO: initialize network with normal
+2019-01-03 19:48:37,485:INFO: initialize network with normal
+2019-01-03 19:50:44,830:INFO: initialize network with normal
+2019-01-03 19:50:45,202:INFO: initialize network with normal
+2019-01-03 19:51:46,231:INFO: initialize network with normal
+2019-01-03 19:51:46,587:INFO: initialize network with normal
+2019-01-03 19:52:42,987:INFO: initialize network with normal
+2019-01-03 19:52:43,344:INFO: initialize network with normal
+2019-01-03 19:59:31,269:INFO: initialize network with normal
+2019-01-03 19:59:31,623:INFO: initialize network with normal
+2019-01-03 20:10:18,505:INFO: initialize network with normal
+2019-01-03 20:10:18,850:INFO: initialize network with normal
+2019-01-03 20:16:44,980:INFO: initialize network with normal
+2019-01-03 20:16:45,349:INFO: initialize network with normal
+2019-01-03 20:29:22,873:INFO: initialize network with normal
+2019-01-03 20:29:23,219:INFO: initialize network with normal
+2019-01-03 20:30:09,923:INFO: (epoch: 1, iters: 2, time: 22.601, data: 0.047) G_GAN: 1.005
+2019-01-03 20:30:09,925:INFO: (epoch: 1, iters: 2, time: 22.601, data: 0.047) G_GAN: 1.005G_L1: 28.449
+2019-01-03 20:30:09,927:INFO: (epoch: 1, iters: 2, time: 22.601, data: 0.047) G_GAN: 1.005G_L1: 28.449D_real: 1.026
+2019-01-03 20:30:09,928:INFO: (epoch: 1, iters: 2, time: 22.601, data: 0.047) G_GAN: 1.005G_L1: 28.449D_real: 1.026D_fake: 0.000
+2019-01-03 20:30:09,929:INFO: (epoch: 1, iters: 2, time: 22.601, data: 0.047) G_GAN: 1.005G_L1: 28.449D_real: 1.026D_fake: 0.000train_iou: 0.160
+2019-01-04 05:42:41,319:INFO: initialize network with normal
+2019-01-04 05:42:41,683:INFO: initialize network with normal
+2019-01-04 05:43:08,359:INFO: (epoch: 1, iters: 2, time: 12.602, data: 0.080) G_GAN: 0.998 
+2019-01-04 05:43:08,369:INFO: (epoch: 1, iters: 2, time: 12.602, data: 0.080) G_GAN: 0.998 G_L1: 37.818 
+2019-01-04 05:43:08,370:INFO: (epoch: 1, iters: 2, time: 12.602, data: 0.080) G_GAN: 0.998 G_L1: 37.818 D_real: 1.005 
+2019-01-04 05:43:08,372:INFO: (epoch: 1, iters: 2, time: 12.602, data: 0.080) G_GAN: 0.998 G_L1: 37.818 D_real: 1.005 D_fake: 0.000 
+2019-01-04 05:43:08,374:INFO: (epoch: 1, iters: 2, time: 12.602, data: 0.080) G_GAN: 0.998 G_L1: 37.818 D_real: 1.005 D_fake: 0.000 train_iou: 0.261 
+2019-01-04 05:43:48,013:INFO: (epoch: 1, iters: 4, time: 15.312, data: 33.111) G_GAN: 0.985 
+2019-01-04 05:43:48,020:INFO: (epoch: 1, iters: 4, time: 15.312, data: 33.111) G_GAN: 0.985 G_L1: 30.773 
+2019-01-04 05:43:48,022:INFO: (epoch: 1, iters: 4, time: 15.312, data: 33.111) G_GAN: 0.985 G_L1: 30.773 D_real: 0.988 
+2019-01-04 05:43:48,023:INFO: (epoch: 1, iters: 4, time: 15.312, data: 33.111) G_GAN: 0.985 G_L1: 30.773 D_real: 0.988 D_fake: 0.000 
+2019-01-04 05:43:48,024:INFO: (epoch: 1, iters: 4, time: 15.312, data: 33.111) G_GAN: 0.985 G_L1: 30.773 D_real: 0.988 D_fake: 0.000 train_iou: 0.151 
+2019-01-04 05:44:50,685:INFO: initialize network with normal
+2019-01-04 05:44:51,028:INFO: initialize network with normal
+2019-01-04 05:45:01,829:INFO: (epoch: 1, iters: 2, time: 3.763, data: 0.047) G_GAN: 0.993 G_L1: 36.935 D_real: 0.987 D_fake: 0.000 train_iou: 0.245 
+2019-01-04 05:49:44,574:INFO: initialize network with normal
+2019-01-04 05:49:44,944:INFO: initialize network with normal
+2019-01-04 05:49:51,206:INFO: (epoch: 1, iters: 2, time: 2.392, t_data: 0.090) G_GAN: [92m0.983 G_L1: [92m36.293 D_real: [92m0.979 D_fake: [92m0.000 train_iou: [92m0.258 
+2019-01-04 06:08:07,411:INFO: initialize network with normal
+2019-01-04 06:08:07,838:INFO: initialize network with normal
+2019-01-04 06:08:12,682:INFO: (epoch: 1, iters: 2, time: 2.390, t_data: 0.060) [G_GAN] 1.038 [G_L1] 15.418 [D_real] 1.049 [D_fake] 0.001 [train_iou] 0.061 
+2019-01-04 06:08:16,941:INFO: (epoch: 1, iters: 4, time: 2.117, t_data: 4.865) [G_GAN] 1.029 [G_L1] 32.261 [D_real] 1.054 [D_fake] 0.001 [train_iou] 0.256 
+2019-01-04 06:08:20,631:INFO: (epoch: 1, iters: 6, time: 1.832, t_data: 9.124) [G_GAN] 1.020 [G_L1] 27.793 [D_real] 1.031 [D_fake] 0.000 [train_iou] 0.229 
+2019-01-04 06:08:24,200:INFO: (epoch: 1, iters: 8, time: 1.774, t_data: 12.810) [G_GAN] 1.029 [G_L1] 29.298 [D_real] 1.031 [D_fake] 0.001 [train_iou] 0.157 
+2019-01-04 06:08:27,756:INFO: (epoch: 1, iters: 10, time: 1.764, t_data: 16.386) [G_GAN] 1.010 [G_L1] 48.548 [D_real] 1.005 [D_fake] 0.000 [train_iou] 0.444 
+2019-01-04 06:08:31,362:INFO: (epoch: 1, iters: 12, time: 1.788, t_data: 19.945) [G_GAN] 1.024 [G_L1] 20.512 [D_real] 1.016 [D_fake] 0.001 [train_iou] 0.171 
+2019-01-04 06:08:34,900:INFO: (epoch: 1, iters: 14, time: 1.755, t_data: 23.547) [G_GAN] 1.015 [G_L1] 7.956 [D_real] 1.019 [D_fake] 0.000 [train_iou] 0.045 
+2019-01-04 06:08:38,499:INFO: (epoch: 1, iters: 16, time: 1.785, t_data: 27.085) [G_GAN] 1.002 [G_L1] 16.279 [D_real] 0.994 [D_fake] 0.000 [train_iou] 0.076 
+2019-01-04 06:08:42,490:INFO: (epoch: 1, iters: 18, time: 1.981, t_data: 30.685) [G_GAN] 1.003 [G_L1] 48.109 [D_real] 0.961 [D_fake] 0.000 [train_iou] 0.469 
+2019-01-04 06:08:46,135:INFO: (epoch: 1, iters: 20, time: 1.807, t_data: 34.678) [G_GAN] 0.996 [G_L1] 22.136 [D_real] 0.965 [D_fake] 0.000 [train_iou] 0.277 
+2019-01-04 06:08:50,721:INFO: (epoch: 1, iters: 22, time: 2.277, t_data: 38.324) [G_GAN] 0.988 [G_L1] 41.062 [D_real] 0.932 [D_fake] 0.000 [train_iou] 0.449 
+2019-01-04 06:08:54,305:INFO: (epoch: 1, iters: 24, time: 1.776, t_data: 42.910) [G_GAN] 0.989 [G_L1] 18.817 [D_real] 0.951 [D_fake] 0.000 [train_iou] 0.186 
+2019-01-04 06:08:57,870:INFO: (epoch: 1, iters: 26, time: 1.769, t_data: 46.489) [G_GAN] 0.981 [G_L1] 8.985 [D_real] 0.986 [D_fake] 0.000 [train_iou] 0.032 
+2019-01-04 06:09:01,433:INFO: (epoch: 1, iters: 28, time: 1.768, t_data: 50.054) [G_GAN] 0.981 [G_L1] 37.780 [D_real] 0.909 [D_fake] 0.000 [train_iou] 0.380 
+2019-01-04 06:09:05,057:INFO: (epoch: 1, iters: 30, time: 1.797, t_data: 53.620) [G_GAN] 0.977 [G_L1] 11.411 [D_real] 0.962 [D_fake] 0.000 [train_iou] 0.127 
+2019-01-04 06:09:08,709:INFO: (epoch: 1, iters: 32, time: 1.815, t_data: 57.235) [G_GAN] 0.971 [G_L1] 18.462 [D_real] 0.928 [D_fake] 0.000 [train_iou] 0.207 
+2019-01-04 06:41:48,644:INFO: initialize network with normal
+2019-01-04 06:41:49,007:INFO: initialize network with normal
+2019-01-06 10:00:50,339:INFO: initialize network with normal
+2019-01-06 10:00:50,815:INFO: initialize network with normal
+2019-01-06 11:44:38,119:INFO: initialize network with normal
+2019-01-06 11:44:38,477:INFO: initialize network with normal
+2019-01-06 11:44:44,401:INFO: (epoch: 1, iters: 2, t_iter: 0:00:05.907038)[G_GAN] 1.012 [G_L1] 27.763 [D_real] 1.036 [D_fake] 0.000 [train_iou] 0.203 
+2019-01-06 11:44:49,481:INFO: (epoch: 1, iters: 4, t_iter: 0:00:10.997776)[G_GAN] 1.008 [G_L1] 35.184 [D_real] 1.029 [D_fake] 0.000 [train_iou] 0.388 
+2019-01-06 11:44:53,383:INFO: (epoch: 1, iters: 6, t_iter: 0:00:14.899193)[G_GAN] 1.000 [G_L1] 14.718 [D_real] 1.010 [D_fake] 0.000 [train_iou] 0.176 
+2019-01-06 11:44:57,042:INFO: (epoch: 1, iters: 8, t_iter: 0:00:18.558785)[G_GAN] 0.982 [G_L1] 21.605 [D_real] 0.993 [D_fake] 0.000 [train_iou] 0.322 
+2019-01-06 11:45:00,659:INFO: (epoch: 1, iters: 10, t_iter: 0:00:22.176109)[G_GAN] 0.969 [G_L1] 26.004 [D_real] 0.990 [D_fake] 0.000 [train_iou] 0.179 
+2019-01-07 02:32:32,803:INFO: initialize network with normal
+2019-01-07 02:32:33,150:INFO: initialize network with normal
+2019-01-07 02:32:37,117:INFO: (epoch: 1, iters: 2, t_iter: 0:00:03.947476)[G_GAN] 0.996 [G_L1] 38.861 [D_real] 1.014 [D_fake] 0.000 [train_iou] 0.318 
+2019-01-07 02:32:40,882:INFO: (epoch: 1, iters: 4, t_iter: 0:00:07.722791)[G_GAN] 0.970 [G_L1] 38.672 [D_real] 0.991 [D_fake] 0.001 [train_iou] 0.307 
+2019-01-07 02:32:44,376:INFO: (epoch: 1, iters: 6, t_iter: 0:00:11.216825)[G_GAN] 0.984 [G_L1] 28.263 [D_real] 0.988 [D_fake] 0.000 [train_iou] 0.220 
+2019-01-07 02:32:47,878:INFO: (epoch: 1, iters: 8, t_iter: 0:00:14.719037)[G_GAN] 0.967 [G_L1] 22.301 [D_real] 0.975 [D_fake] 0.001 [train_iou] 0.164 
+2019-01-07 02:32:51,350:INFO: (epoch: 1, iters: 10, t_iter: 0:00:18.191247)[G_GAN] 0.965 [G_L1] 16.191 [D_real] 0.972 [D_fake] 0.000 [train_iou] 0.080 
+2019-01-07 02:40:05,477:INFO: initialize network with normal
+2019-01-07 02:40:05,866:INFO: initialize network with normal
+2019-01-07 02:40:13,975:INFO: (epoch: 1, iters: 2, t_iter: 0:00:08.102641)[G_GAN] 0.949 [G_L1] 59.578 [D_real] 0.925 [D_fake] 0.003 [train_iou] 0.048 
+2019-01-07 02:40:17,912:INFO: (epoch: 1, iters: 4, t_iter: 0:00:12.039590)[G_GAN] 0.947 [G_L1] 29.494 [D_real] 0.944 [D_fake] 0.002 [train_iou] 0.090 
+2019-01-07 02:40:22,089:INFO: (epoch: 1, iters: 6, t_iter: 0:00:16.216139)[G_GAN] 0.907 [G_L1] 34.309 [D_real] 0.897 [D_fake] 0.005 [train_iou] 0.045 
+2019-01-07 02:40:25,823:INFO: (epoch: 1, iters: 8, t_iter: 0:00:19.950527)[G_GAN] 0.912 [G_L1] 29.301 [D_real] 0.908 [D_fake] 0.005 [train_iou] 0.040 
+2019-01-07 02:40:29,473:INFO: (epoch: 1, iters: 10, t_iter: 0:00:23.601233)[G_GAN] 0.939 [G_L1] 31.025 [D_real] 0.912 [D_fake] 0.003 [train_iou] 0.063 
+2019-01-07 02:44:57,921:INFO: initialize network with normal
+2019-01-07 02:44:58,303:INFO: initialize network with normal
+2019-01-07 02:54:22,451:INFO: initialize network with normal
+2019-01-07 02:54:22,825:INFO: initialize network with normal
+2019-01-07 02:54:26,612:INFO: (epoch: 1, iters: 2, t_iter: 0:00:03.780822)[G_GAN] 1.010 [G_L1] 35.763 [D_real] 1.022 [D_fake] 0.001 [train_iou] 0.114 
+2019-01-07 02:54:30,394:INFO: (epoch: 1, iters: 4, t_iter: 0:00:07.562115)[G_GAN] 0.994 [G_L1] 27.342 [D_real] 1.003 [D_fake] 0.000 [train_iou] 0.186 
+2019-01-07 02:54:33,917:INFO: (epoch: 1, iters: 6, t_iter: 0:00:11.085249)[G_GAN] 0.986 [G_L1] 35.620 [D_real] 0.993 [D_fake] 0.000 [train_iou] 0.291 
+2019-01-07 02:54:37,456:INFO: (epoch: 1, iters: 8, t_iter: 0:00:14.624771)[G_GAN] 0.962 [G_L1] 29.002 [D_real] 0.982 [D_fake] 0.000 [train_iou] 0.111 
+2019-01-07 02:54:40,978:INFO: (epoch: 1, iters: 10, t_iter: 0:00:18.146180)[G_GAN] 0.986 [G_L1] 32.562 [D_real] 0.971 [D_fake] 0.000 [train_iou] 0.205 
+2019-01-07 03:04:59,924:INFO: initialize network with normal
+2019-01-07 03:05:00,296:INFO: initialize network with normal
+2019-01-07 03:05:04,098:INFO: (epoch: 1, iters: 2, t_iter: 0:00:03.796809)[G_GAN] 0.985 [G_L1] 23.625 [D_real] 0.990 [D_fake] 0.000 [train_iou] 0.197 
+2019-01-07 03:05:07,837:INFO: (epoch: 1, iters: 4, t_iter: 0:00:07.534667)[G_GAN] 0.978 [G_L1] 43.928 [D_real] 0.969 [D_fake] 0.000 [train_iou] 0.165 
+2019-01-07 03:05:11,310:INFO: (epoch: 1, iters: 6, t_iter: 0:00:11.008170)[G_GAN] 0.966 [G_L1] 23.874 [D_real] 0.960 [D_fake] 0.000 [train_iou] 0.340 
+2019-01-07 03:05:14,820:INFO: (epoch: 1, iters: 8, t_iter: 0:00:14.517778)[G_GAN] 0.977 [G_L1] 33.356 [D_real] 0.953 [D_fake] 0.000 [train_iou] 0.200 
+2019-01-07 03:05:18,485:INFO: (epoch: 1, iters: 10, t_iter: 0:00:18.182856)[G_GAN] 0.940 [G_L1] 24.594 [D_real] 0.937 [D_fake] 0.001 [train_iou] 0.166 
+2019-01-07 03:06:47,367:INFO: (epoch: 1, iters: 6, t_iter: 0:01:19.397549)[eval_iou] 0.237 
+2019-01-07 03:07:08,603:INFO: Best IoU is [0.2365006944016659] at [1] epoch
+2019-01-07 06:22:50,260:INFO: initialize network with normal
+2019-01-07 06:22:50,620:INFO: initialize network with normal
+2019-01-07 06:26:42,742:INFO: initialize network with normal
+2019-01-07 06:26:43,095:INFO: initialize network with normal
+2019-01-07 06:29:07,489:INFO: initialize network with normal
+2019-01-07 06:29:07,836:INFO: initialize network with normal
+2019-01-07 06:34:17,856:INFO: initialize network with normal
+2019-01-07 06:34:18,247:INFO: initialize network with normal
+2019-01-07 06:36:22,150:INFO: initialize network with normal
+2019-01-07 06:36:22,572:INFO: initialize network with normal

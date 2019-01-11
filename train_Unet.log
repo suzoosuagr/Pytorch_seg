@@ -1,0 +1,21 @@
+2019-01-09 10:57:49,125:INFO: (epoch: 1, iters: 2, t_iter: 0:00:15.342616)[loss] 1.440 [matrix_iou] 0.000 
+2019-01-09 10:58:04,686:INFO: (epoch: 1, iters: 4, t_iter: 0:00:32.943292)[loss] 1.389 [matrix_iou] 0.000 
+2019-01-09 10:58:22,351:INFO: (epoch: 1, iters: 6, t_iter: 0:00:46.297973)[loss] 1.181 [matrix_iou] 0.000 
+2019-01-09 10:58:35,380:INFO: (epoch: 1, iters: 8, t_iter: 0:01:03.755182)[loss] 1.573 [matrix_iou] 0.000 
+2019-01-09 10:59:18,683:INFO: (epoch: 1, iters: 10, t_iter: 0:01:16.265804)[loss] 1.412 [matrix_iou] 0.000 
+2019-01-09 10:59:57,736:INFO: (epoch: 1, iters: 6, t_iter: 0:00:34.943783)[eval_iou] 0.000 
+2019-01-11 06:02:42,678:INFO: (epoch: 1, iters: 2, t_iter: 0:10:22.462853)[loss] 1.515 [matrix_iou] 0.000 
+2019-01-11 06:02:56,467:INFO: (epoch: 1, iters: 4, t_iter: 0:10:36.252766)[loss] 1.360 [matrix_iou] 0.000 
+2019-01-11 06:07:32,935:INFO: (epoch: 1, iters: 2, t_iter: 0:03:11.570957)[loss] 1.450 [matrix_iou] 0.000 
+2019-01-11 07:12:25,914:INFO: (epoch: 1, iters: 2, t_iter: 0:00:17.932131)[loss] 1.536 [matrix_iou] 0.000 
+2019-01-11 07:12:36,373:INFO: (epoch: 1, iters: 4, t_iter: 0:00:28.391586)[loss] 1.505 [matrix_iou] 0.000 
+2019-01-11 07:12:45,835:INFO: (epoch: 1, iters: 6, t_iter: 0:00:37.853746)[loss] 1.500 [matrix_iou] 0.000 
+2019-01-11 07:12:55,235:INFO: (epoch: 1, iters: 8, t_iter: 0:00:47.254042)[loss] 1.405 [matrix_iou] 0.000 
+2019-01-11 07:13:04,616:INFO: (epoch: 1, iters: 10, t_iter: 0:00:56.634799)[loss] 1.438 [matrix_iou] 0.000 
+2019-01-11 10:08:39,642:INFO: (epoch: 1, iters: 2, t_iter: 0:00:10.745887)[loss] 1.431 [matrix_iou] 0.000 
+2019-01-11 10:08:49,263:INFO: (epoch: 1, iters: 4, t_iter: 0:00:20.367458)[loss] 1.536 [matrix_iou] 0.000 
+2019-01-11 10:08:58,614:INFO: (epoch: 1, iters: 6, t_iter: 0:00:29.718613)[loss] 1.476 [matrix_iou] 0.000 
+2019-01-11 10:09:07,980:INFO: (epoch: 1, iters: 8, t_iter: 0:00:39.084648)[loss] 1.456 [matrix_iou] 0.000 
+2019-01-11 10:09:17,323:INFO: (epoch: 1, iters: 10, t_iter: 0:00:48.427581)[loss] 1.479 [matrix_iou] 0.000 
+2019-01-11 10:09:25,859:INFO: (epoch: 1, iters: 6, t_iter: 0:00:08.535970)[eval_iou] 0.000 
+2019-01-11 10:09:25,861:INFO: Best IoU is [tensor([2.6097e-12])] at [1] epoch
