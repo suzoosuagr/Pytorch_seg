@@ -11,6 +11,8 @@ class ISICKerasDataset(data.Dataset):
     def __init__(self, dataset_dir, data_type='train', transform=None):
         self.img_files = glob(os.path.join(dataset_dir, data_type, 'image/*'))
         self.mask_files = glob(os.path.join(dataset_dir, data_type, 'label/*'))
+        self.mask_dir = os.path.join(dataset_dir, data_type, 'label/')
+        
         self.transform = transform
     
     def __len__(self):
@@ -20,13 +22,18 @@ class ISICKerasDataset(data.Dataset):
 
     def __getitem__(self, idx):
         img_file = self.img_files[idx]
-        mask_file = self.mask_files[idx]
+        mask_file = img_file.split('/')[-1]
+        img_id = mask_file.split('.')[0]
+        mask_file = img_id + '_segmentation.png'
+        mask_file = os.path.join(self.mask_dir, mask_file)
+    
+        # mask_file = self.mask_files[idx]
         # Image shaoe (256,256,3) for rgb [0,255] uint8
         img = io.imread(img_file)
         # img = img/127.5 - 1
         # Image shape (256,256) for gray [0,255] uint8
         mask = io.imread(mask_file)
-        mask = np.resize(mask, (256,256,1))
+        mask = np.resize(mask, (256,256,1)).astype(np.uint8)
         if self.transform is not None:
             combine = np.concatenate((img, mask), axis=2)
             combine = Image.fromarray(combine)
@@ -34,6 +41,42 @@ class ISICKerasDataset(data.Dataset):
             img = combine[:3,:,:]
             mask = combine[3:,:,:]
         return img, mask
+
+class ISBI2018Dataset(data.Dataset):
+    def __init__(self, dataset_dir, data_type='train', transform=None):
+        self.img_files = glob(os.path.join(dataset_dir, data_type, 'image/*'))
+        self.mask_files = glob(os.path.join(dataset_dir, data_type, 'label/*'))
+        self.mask_dir = os.path.join(dataset_dir, data_type, 'label/')
+        
+        self.transform = transform
+    
+    def __len__(self):
+        ''' Only return the num of train img 
+        '''
+        return len(self.img_files)
+
+    def __getitem__(self, idx):
+        img_file = self.img_files[idx]
+        mask_file = img_file.split('/')[-1]
+        img_id = mask_file.split('.')[0]
+        mask_file = img_id + '_OD.png'
+        mask_file = os.path.join(self.mask_dir, mask_file)
+    
+        # mask_file = self.mask_files[idx]
+        # Image shaoe (256,256,3) for rgb [0,255] uint8
+        img = io.imread(img_file)
+        # img = img/127.5 - 1
+        # Image shape (256,256) for gray [0,255] uint8
+        mask = io.imread(mask_file)
+        mask = np.resize(mask, (256,256,1)).astype(np.uint8)
+        if self.transform is not None:
+            combine = np.concatenate((img, mask), axis=2)
+            combine = Image.fromarray(combine)
+            combine = self.transform(combine)
+            img = combine[:3,:,:]
+            mask = combine[3:,:,:]
+        return img, mask
+
 
 def imsave(img):
     npimg = img.numpy()

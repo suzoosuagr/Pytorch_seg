@@ -1,26 +1,19 @@
 import torch
+from torchvision import transforms
+from dataset.dataloader import ISICKerasDataset
+from torch.utils.data import DataLoader
+import numpy as np
+import os
 
-def accu_iou(pred_y, y):
-        # B is the mask pred, A is the malanoma 
-    y_pred = ( pred_y > 0.7) * 1.0
-    y_true = ( y > 0.5) * 1.0
-    pred_flat = y_pred.view(y_pred.numel())
-    true_flat = y_true.view(y_true.numel())
+transformations = transforms.Compose([transforms.RandomHorizontalFlip(), 
+                                      transforms.RandomVerticalFlip(), 
+                                      transforms.ToTensor()])
+eval_transformations = transforms.Compose([transforms.ToTensor()])
 
-    intersection = (torch.sum(pred_flat * true_flat)) + 1
-    # torch.set_default_tensor_type(torch.FloatType)
-    denominator = (torch.sum(pred_flat + true_flat)) - intersection + 100
+dataset_dir = 'data/ISICKeras/'
 
-    matrix_iou = (intersection/denominator)
-    return  matrix_iou
+train_dataset = ISICKerasDataset(dataset_dir, data_type='train', transform=transformations)
+train_datasetLoader = DataLoader(train_dataset, shuffle=True, batch_size=1, num_workers=0)
 
-pred_y = torch.Tensor([1,0,0,1])
-y = torch.Tensor([1,1,1,0])
-
-iou = accu_iou(pred_y, y)
-
-
-re = a/b
-
-
-print(iou)
+img, mask = train_dataset[0]
+print('test')

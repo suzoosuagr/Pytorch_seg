@@ -19,3 +19,6 @@
 2019-01-11 10:09:17,323:INFO: (epoch: 1, iters: 10, t_iter: 0:00:48.427581)[loss] 1.479 [matrix_iou] 0.000 
 2019-01-11 10:09:25,859:INFO: (epoch: 1, iters: 6, t_iter: 0:00:08.535970)[eval_iou] 0.000 
 2019-01-11 10:09:25,861:INFO: Best IoU is [tensor([2.6097e-12])] at [1] epoch
+2019-01-29 01:14:02,466:INFO: (epoch: 1, iters: 2, t_iter: 0:00:14.251235)[loss] 1.686 [matrix_iou] 0.016 
+2019-01-29 01:14:11,609:INFO: (epoch: 1, iters: 4, t_iter: 0:00:23.393778)[loss] 1.682 [matrix_iou] 0.023 
+2019-01-29 01:14:20,420:INFO: (epoch: 1, iters: 6, t_iter: 0:00:32.205070)[loss] 1.677 [matrix_iou] 0.026 
