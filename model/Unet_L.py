@@ -2,8 +2,19 @@ import torch
 import os
 import torch.nn as nn
 from torch.nn import init
+import numpy as np
 import logging
 import functools
+import skimage
+
+# def save_img(img, name):
+#     npimg = img.numpy()
+#     npimg = np.reshape(npimg, (256,256))
+#     max_scale = np.absolute(npimg)
+#     max_scale = np.max(max_scale)
+#     npimg = npimg/max_scale
+#     npimg = skimage.img_as_ubyte(npimg)
+#     skimage.io.imsave('./results/'+ name + '.jpg', npimg)
 
 class double_conv(nn.Module):
     ''' Conv => Batch_Norm => ReLU => Conv2d => Batch_Norm => ReLU
@@ -68,13 +79,13 @@ class up(nn.Module):
         #  would be a nice idea if the upsampling could be learned too,
         #  but my machine do not have enough memory to handle all those weights
         if Transpose:
-            self.up = nn.ConvTranspose2d(in_ch, in_ch//2, 2, stride=2)
+            self.up = nn.ConvTranspose2d(in_ch, out_ch, 2, stride=2)
         else:
             # self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
             self.up = nn.Sequential(nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True),
-                                    nn.Conv2d(in_ch, in_ch//2, kernel_size=1, padding=0),
+                                    nn.Conv2d(in_ch, out_ch, kernel_size=1, padding=0),
                                     nn.ReLU(inplace=True))
-        self.conv = double_conv(in_ch, out_ch)
+        self.conv = double_conv(in_ch+3, out_ch)
         self.up.apply(self.init_weights)
 
     def forward(self, x1, x2):
@@ -125,9 +136,32 @@ class outconv(nn.Module):
             init.xavier_normal(m.weight)
             init.constant(m.bias,0)
 
-class Unet(nn.Module):
+class laplayer(nn.Module):
+    def __init__(self):
+        super(laplayer, self).__init__()
+        lap_filter = np.array([[0, 1, 0],
+                                [1, -4,1],
+                                [0, 1, 0]])
+        self.laplayer = nn.Conv2d(in_channels=1, out_channels=1, kernel_size=3, padding=3//2)
+        self.laplayer.weight.data.copy_(torch.from_numpy(lap_filter))
+        self.laplayer.bias.data.copy_(torch.from_numpy(np.array([0.0])))
+        for param in self.laplayer.parameters():
+            param.requires_grad = False
+
+    def forward(self, img):
+        img_r = img[:,0:1,:,:]
+        img_g = img[:,1:2,:,:]
+        img_b = img[:,2:3,:,:]
+
+        lap_r = self.laplayer(img_r)
+        lap_g = self.laplayer(img_g)
+        lap_b = self.laplayer(img_b)
+        lap = torch.cat((lap_r, lap_g, lap_b), 1)
+        return lap
+
+class Unet_L(nn.Module):
     def __init__(self, in_ch, out_ch, gpu_ids=[]):
-        super(Unet, self).__init__()
+        super(Unet_L, self).__init__()
         self.loss_stack = 0
         self.matrix_iou_stack = 0
         self.stack_count = 0
@@ -136,6 +170,8 @@ class Unet(nn.Module):
         self.bce_loss = nn.BCELoss()
         self.device = torch.device('cuda:{}'.format(self.gpu_ids[0])) if torch.cuda.is_available() else torch.device('cpu')
         self.inc = inconv(in_ch, 64)
+        self.lap = laplayer()
+        self.max_pool = nn.MaxPool2d(2)
         self.down1 = down(64, 128)
         # print(list(self.down1.parameters()))
         self.down2 = down(128, 256)
@@ -152,6 +188,11 @@ class Unet(nn.Module):
         # self.optimizer = torch.optim.SGD(self.parameters(), lr=0.1, momentum=0.9, weight_decay=0.0005)
 
     def forward(self):
+        lap1 = self.lap(self.x)
+        lap2 = self.max_pool(lap1)
+        lap3 = self.max_pool(lap2)
+        lap4 = self.max_pool(lap3)
+
         x1 = self.inc(self.x)
         x2 = self.down1(x1)
         x3 = self.down2(x2)
@@ -159,9 +200,14 @@ class Unet(nn.Module):
         x4 = self.drop3(x4)
         x5 = self.down4(x4)
         x5 = self.drop4(x5)
+
+        x4 = torch.cat((x4, lap4), 1)
         x = self.up1(x5, x4)
+        x3 = torch.cat((x3, lap3), 1)
         x = self.up2(x, x3)
+        x2 = torch.cat((x2, lap2), 1)
         x = self.up3(x, x2)
+        x1 = torch.cat((x1, lap1), 1)
         x = self.up4(x, x1)
         x = self.outc(x)
         self.pred_y = nn.functional.sigmoid(x)

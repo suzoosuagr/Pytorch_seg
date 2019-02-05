@@ -1,4 +1,4 @@
-from model.U_net import Unet
+from model.Unet_L import Unet_L
 from utils_net.tools import set_logger, print_current_losses
 import logging
 import datetime
@@ -15,8 +15,8 @@ eval_transformations = transforms.Compose([transforms.ToTensor()])
 
 if __name__ == "__main__":
     set_logger('train_Unet.log')
-    dataset_dir = '../data/ISBI2018/'
-    batch_size = 8
+    dataset_dir = './data/ISICKeras/'
+    batch_size = 1
     gpu_ids = ['0']
     device = torch.device('cuda:{}'.format(gpu_ids[0])) if torch.cuda.is_available() else torch.device('cpu')
     train_dataset = ISICKerasDataset(dataset_dir, data_type='train', transform=transformations)
@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     dataset_size = len(train_datasetLoder)
     eval_dataset_size = len(eval_datasetLoader)
-    model = Unet(3, 1, gpu_ids=gpu_ids)
+    model = Unet_L(3, 1, gpu_ids=gpu_ids)
     # def init_normal(m):
     #     if type(m) == torch.nn.Conv2d:
     #         init.normal_(m.weight.data, 0.0, 0.02)
