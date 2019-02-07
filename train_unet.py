@@ -3,7 +3,7 @@ from utils_net.tools import set_logger, print_current_losses
 import logging
 import datetime
 from torchvision import transforms
-from dataset.dataloader import ISICKerasDataset
+from dataset.dataloader import ISICKerasDataset, ISBI2018Dataset
 from torch.utils.data import DataLoader
 import torch
 # from torch.nn import init
@@ -15,16 +15,16 @@ eval_transformations = transforms.Compose([transforms.ToTensor()])
 
 if __name__ == "__main__":
     set_logger('train_Unet.log')
-    dataset_dir = './data/ISICKeras/'
+    dataset_dir = '/Users/jiyangwang/desktop/ISBI2018_ori/'
     batch_size = 1
     gpu_ids = ['0']
     device = torch.device('cuda:{}'.format(gpu_ids[0])) if torch.cuda.is_available() else torch.device('cpu')
-    train_dataset = ISICKerasDataset(dataset_dir, data_type='train', transform=transformations)
+    train_dataset = ISBI2018Dataset(dataset_dir, data_type='Training Set', transform=transformations)
     train_datasetLoder = DataLoader(train_dataset, shuffle=True, batch_size=batch_size, num_workers=0)
 
     # train_img = train_dataset[0]
 
-    eval_dataset = ISICKerasDataset(dataset_dir, data_type='eval', transform=eval_transformations)
+    eval_dataset = ISBI2018Dataset(dataset_dir, data_type='Testing Set', transform=eval_transformations)
     eval_datasetLoader = DataLoader(eval_dataset, shuffle=False, batch_size=batch_size, num_workers=0)
 
     # eval_img = eval_dataset[0]

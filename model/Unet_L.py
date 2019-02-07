@@ -159,6 +159,47 @@ class laplayer(nn.Module):
         lap = torch.cat((lap_r, lap_g, lap_b), 1)
         return lap
 
+class sobel_layer(nn.Module):
+    def __init__(self):
+        super(sobel_layer, self).__init__()
+        sobel_x_filter = np.array(
+            [[1, 0, -1],
+             [2, 0, -2],
+             [1, 0, -1]]
+        )
+        sobel_y_filter = np.array(
+            [[ 1,  2,  1],
+             [ 0,  0,  0],
+             [-1, -2, -1]]
+        )
+        self.sobel_x = nn.Conv2d(in_channels=1, out_channels=1, kernel_size=3, padding=3//2)
+        self.sobel_x.weight.data.copy_(torch.from_numpy(sobel_x_filter))
+        self.sobel_x.bias.data.copy_(torch.from_numpy(np.array([0.0])))
+        for param in self.sobel_x.parameters():
+            param.requires_grad = False
+
+        self.sobel_y = nn.Conv2d(in_channels=1, out_channels=1, kernel_size=3, padding=3//2)
+        self.sobel_y.weight.data.copy_(torch.from_numpy(sobel_y_filter))
+        self.sobel_y.bias.data.copy_(torch.from_numpy(np.array([0.0])))
+        for param in self.sobel_y.parameters():
+            param.requires_grad = False
+
+    def forward(self, img):
+        img_r = img[:,0:1,:,:]
+        img_g = img[:,1:2,:,:]
+        img_b = img[:,2:3,:,:]
+
+        sobel_r_x = self.sobel_x(img_r)
+        sobel_g_x = self.sobel_x(img_g)
+        sobel_b_x = self.sobel_x(img_b)
+
+        sobel_r_y = self.sobel_y(img_r)
+        sobel_g_y = self.sobel_y(img_g)
+        sobel_b_y = self.sobel_y(img_b)
+
+        sobel = torch.cat((sobel_r_x, sobel_r_y, sobel_g_x, sobel_g_y, sobel_b_x, sobel_b_y), 1)
+        return sobel
+
 class Unet_L(nn.Module):
     def __init__(self, in_ch, out_ch, gpu_ids=[]):
         super(Unet_L, self).__init__()
@@ -170,7 +211,8 @@ class Unet_L(nn.Module):
         self.bce_loss = nn.BCELoss()
         self.device = torch.device('cuda:{}'.format(self.gpu_ids[0])) if torch.cuda.is_available() else torch.device('cpu')
         self.inc = inconv(in_ch, 64)
-        self.lap = laplayer()
+        # self.lap = laplayer()
+        self.sobel = sobel_layer()
         self.max_pool = nn.MaxPool2d(2)
         self.down1 = down(64, 128)
         # print(list(self.down1.parameters()))
@@ -188,7 +230,7 @@ class Unet_L(nn.Module):
         # self.optimizer = torch.optim.SGD(self.parameters(), lr=0.1, momentum=0.9, weight_decay=0.0005)
 
     def forward(self):
-        lap1 = self.lap(self.x)
+        lap1 = self.sobel(self.x)
         lap2 = self.max_pool(lap1)
         lap3 = self.max_pool(lap2)
         lap4 = self.max_pool(lap3)

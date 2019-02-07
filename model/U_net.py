@@ -187,7 +187,7 @@ class Unet(nn.Module):
         true_flat = y_true.view(y_true.numel())
 
         intersection = float(torch.sum(pred_flat * true_flat)) + 1e-7
-        denominator = float(torch.sum(pred_flat + true_flat)) - intersection + 1e-7
+        denominator = float(torch.sum(pred_flat + true_flat)) - intersection + 2e-7
 
         self.matrix_iou = intersection/denominator
         self.matrix_iou_stack += self.matrix_iou
