@@ -36,3 +36,4 @@ $ CUDA_VISIBLE_DEVICES=0 python train.py
 ```bash
 $ CUDA_VISIBLE_DEVICES=0, python train_unet.py
 ```
+test
